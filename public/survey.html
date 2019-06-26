@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Friend Finder</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+	<div class="container">
+         <form id ="survey">
+		<h1>Friend Finder <small>| FutureRama </small> </h1>
+		<hr>
+
+		<h3><strong>About You</strong></h3>
+		<h4>Name (Required)</h4>
+		<input type="text" name="" id="name" class="form-control" required >
+
+		<h4>Link to Photo Image (Required)</h4>
+		<input type="text" name="" id="photo" class="form-control" required >
+
+		<hr> <hr>
+
+		<h4>You prefer a good lake to the ocean.</h4>
+	 	<select data-placeholder="" class="chosen-select" id="q1">
+	 		<option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+      	</select>
+<hr>
+		<h4>You have a least favorite flower.</h4>
+	 	<select data-placeholder="" class="chosen-select" id="q2">
+	 		<option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+      	</select>
+
+<hr>
+		<h4>You make intense eye contact with people passing by you in their cars</h4>
+	 	<select data-placeholder="" class="chosen-select" id="q3">
+	 		<option value=""></option>
+            <option value="1">1 (Never)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Always)</option>
+      	</select>
+<hr>
+		<h4>You cut your sponges in half</h4>
+	 	<select data-placeholder="" class="chosen-select" id="q4">
+	 		<option value=""></option>
+            <option value="1">1 (Never)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Always)</option>
+      	</select>
+<hr>
+		<h4>You like racoons.</h4>
+	 	<select data-placeholder="" class="chosen-select" id="q5">
+	 		<option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+      	</select>
+<hr>
+		<h4>You store your toothbrush in the kitchen</h4>
+	 	<select data-placeholder="" class="chosen-select" id="q6">
+	 		<option value=""></option>
+            <option value="1">1 (Never)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Always)</option>
+      	</select>
+<hr>
+		<h4>Baths - good or bad?</h4>
+	 	<select data-placeholder="" class="chosen-select" id="q7">
+	 		<option value=""></option>
+            <option value="1">1 (Bad)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Good)</option>
+      	</select>
+<hr>
+		<h4>You are a cat person</h4>
+	 	<select data-placeholder="" class="chosen-select" id="q8">
+	 		<option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+      	</select>
+<hr>
+		<h4>You are a dog person.</h4>
+	 	<select data-placeholder="" class="chosen-select" id="q9">
+	 		<option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+      	</select>
+<hr>
+		<h4>You are a reptile person.</h4>
+	 	<select data-placeholder="" class="chosen-select" id="q10">
+	 		<option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+      	</select>
+
+		<br>
+		<br>
+
+	
+		<button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i>
+ Submit</button>
+</form> 
+		<hr>
+	    <footer class="footer">
+	     
+	    </footer>
+
+	</div>
+
+<!-- Modal -->
+
+      <div id="resultsModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close"  data-dismiss="modal">&times;</button>
+              <h2 class="modal-title"><strong>Best Match</strong></h2>
+            </div>
+            <div class="modal-body">
+              <h2 id="matchName"></h2>
+              <img id="matchImg" style="width:100%;">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" id="close" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+<script type="text/javascript">
+   //clears out the form when you close the match modal
+ $("#close").on("click", function(){
+    $('#name').val('');
+    $('#photo').val('');
+    for (var i = 1; i <= 10; i++) {
+      $('#q' + i).val('');
+    }
+  });
+ // Capture the form inputs 
+    $("#submit").on("click", function(){
+      event.preventDefault();
+      // Form validation
+      function validateForm() {
+              var isValid = true;
+              $('.form-control').each(function() {
+                if ( $(this).val() === '' )
+                    isValid = false;
+              });
+              $('.answer').each(function() {
+                  if( $(this).val() === "")
+                        isValid = false;
+              });
+              return isValid;
+            }
+            // If all required fields are filled
+            if (validateForm() === true)
+            {
+                  //object created for the users data
+                  var newFriend = {
+                    name: $("#name").val().trim(),
+                    pic: $("#photo").val().trim(),
+                    score:[
+                        $("#q1").val(),
+                        $("#q2").val(),
+                        $("#q3").val(),
+                        $("#q4").val(),
+                        $("#q5").val(),
+                        $("#q6").val(),
+                        $("#q7").val(),
+                        $("#q8").val(),
+                        $("#q9").val(),
+                        $("#q10").val()
+                        ]
+                        };
+               //post to the /api the newFriend
+                
+                  $.post("/api", newFriend)
+                  .done(function(data) {
+                    console.log(data);
+                    });
+                  //get the friend array from the api to do the match logic w/
+                  $.get("/api", function (req, res){
+                    console.log(req);
+                    console.log(res);
+                    function getMatch(newFriend, req) {
+                   //best score is the best score number from my friend array
+                    var bestScore = 33;
+                    var currScoreArray = [];
+                    var currScore = 0;
+                    var match;
+                    var friends = req;
+                    console.log(friends);
+                    // ensures newFriend isn't matched to themselves
+                    // then then adds up the scores and subtracts them from the
+                    //friends scores in a loop
+                    for (var i = 0; i < friends.length; i++) {
+                      if (newFriend.name !== friends[i].name) {
+                        currScore = 0;
+                        for (var j = 0; j < friends[i].score.length; j++) {
+                          currScore += Math.abs(newFriend.score[j] - friends[i].score[j]);
+                          
+                        }
+                        if (currScore < bestScore) {
+                          bestScore = currScore;
+                          console.log(bestScore);
+                          match = friends[i];
+                          console.log(match);
+                        }
+                      }
+                    }
+                  //displays the modal for the match!
+                  $("#matchName").text("Your new friend is: " + match.name);
+                  $('#matchImg').attr("src", match.pic);
+                  // Show the modal with the best match 
+                  $("#resultsModal").modal('toggle');
+                }
+                  //calling the match function
+                  getMatch(newFriend, req);
+                });
+                
+      }else
+            {
+              alert("Please fill out all fields before  submitting!");
+            }
+      
+      return false;
+});
+</script>
+</body>
+</html>
